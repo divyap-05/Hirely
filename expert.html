@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirely | Expert Recruiter Portal</title>
+    <link rel="stylesheet" href="expert.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo">Hirely</div>
+            <span class="portal-badge">DRDO Technical Expert Portal</span>
+        </div>
+
+        <nav>
+            <button onclick="showSection('dashboard')" class="nav-item active">
+                📊 Dashboard
+            </button>
+            <button onclick="showSection('candidates')" class="nav-item">
+                👥 Candidates
+            </button>
+            <button onclick="showSection('positions')" class="nav-item">
+                💼 Job Positions
+            </button>
+            <button onclick="showSection('interviews')" class="nav-item">
+                🎤 Live Interviews
+            </button>
+            <button onclick="showSection('evaluations')" class="nav-item">
+                📝 Evaluations
+            </button>
+            <button onclick="showSection('questions')" class="nav-item">
+                ❓ Question Bank
+            </button>
+            <button onclick="showSection('schedule')" class="nav-item">
+                📅 Schedule
+            </button>
+            <button onclick="showSection('profile')" class="nav-item">
+                👤 Expert Profile
+            </button>
+        </nav>
+
+        <button class="logout" onclick="logout()">
+            Logout
+        </button>
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <div>
+                <h2 id="pageTitle">DRDO Technical Expert Dashboard</h2>
+                <p id="pageSubTitle">Welcome back, Expert 👋</p>
+            </div>
+
+            <div class="top-actions">
+                <div class="notification-wrapper">
+                    <button class="icon-btn" onclick="toggleNotifications()" title="Notifications">
+                        🔔 <span class="notif-badge" id="notifBadge">3</span>
+                    </button>
+
+                    <!-- Notifications Dropdown -->
+                    <div class="notif-dropdown" id="notifDropdown">
+                        <div class="notif-header">
+                            <strong>Notifications</strong>
+                            <span class="mark-read" onclick="clearNotifs()">Mark all read</span>
+                        </div>
+                        <div class="notif-list" id="notifList">
+                            <div class="notif-item unread">
+                                <span class="notif-icon">🎤</span>
+                                <div>
+                                    <p><strong>Live Interview Started</strong></p>
+                                    <small>Divya Pai for Scientist ‘B’ – Computer Science & Engineering</small>
+                                </div>
+                            </div>
+                            <div class="notif-item unread">
+                                <span class="notif-icon">🤖</span>
+                                <div>
+                                    <p><strong>AI Evaluation Ready</strong></p>
+                                    <small>Rahul Shah matched 92%</small>
+                                </div>
+                            </div>
+                            <div class="notif-item unread">
+                                <span class="notif-icon">📅</span>
+                                <div>
+                                    <p><strong>Interview Scheduled</strong></p>
+                                    <small>Aarav Mehta at 3:00 PM today</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-chip" onclick="showSection('profile')">
+                    <div class="avatar" id="topAvatar">AS</div>
+                    <div class="profile-info">
+                        <strong id="topExpertName">Dr. Ananya Sharma</strong>
+                        <small>Senior Recruiter</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- ================= 1. DASHBOARD ================= -->
+        <section id="dashboard" class="page active-page">
+
+            <div class="welcome-card">
+                <div>
+                    <span class="small-label">EXPERT RECRUITER PORTAL</span>
+                    <h1>AI-Assisted Recruitment Dashboard</h1>
+                    <p>
+                        Monitor candidate AI interviews in real-time, review automated skill scoring, 
+                        inject custom interview questions, and make definitive recruitment decisions.
+                    </p>
+                    <div class="hero-buttons">
+                        <button onclick="showSection('interviews')" class="primary-btn">
+                            🎤 Monitor Live Interview
+                        </button>
+                        <button onclick="showSection('candidates')" class="secondary-btn">
+                            👥 Review Candidates
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATISTICS CARDS -->
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div>
+                        <span>Total Candidates</span>
+                        <strong id="statCandidates">24</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⏳</div>
+                    <div>
+                        <span>Pending Reviews</span>
+                        <strong id="statPending">7</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎤</div>
+                    <div>
+                        <span>Interviews Today</span>
+                        <strong id="statInterviews">3</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div>
+                        <span>Completed Evaluations</span>
+                        <strong id="statEvaluations">18</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVE MONITOR WIDGET ON DASHBOARD -->
+            <div class="dashboard-grid">
+                <div class="glass-card live-widget">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <span class="live-pill">⚪ NO LIVE INTERVIEW</span>
+                            <h3>Live Interview Monitoring</h3>
+                        </div>
+                        <button onclick="showSection('interviews')" class="secondary-btn btn-sm">
+                            Open Full Studio ↗
+                        </button>
+                    </div>
+
+                    <div class="live-candidate-brief">
+                        <div class="candidate-avatar">—</div>
+                        <div>
+                            <h4 class="live-dashboard-candidate-name">No interviews live</h4>
+                            <p class="live-dashboard-candidate-detail">Waiting for a live interview</p>
+                        </div>
+                    </div>
+
+                    <div class="question-preview-box">
+                        <span class="box-label">Current Question:</span>
+                        <p class="question-text live-dashboard-question">No live interview is currently active.</p>
+                        <div class="metrics-preview live-dashboard-metrics">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TODAY'S SCHEDULE MINI WIDGET -->
+                <div class="glass-card schedule-widget">
+                    <div class="card-header">
+                        <h3>Today's Interview Schedule</h3>
+                        <button onclick="showSection('schedule')" class="text-btn">View All</button>
+                    </div>
+
+                    <ul class="mini-schedule-list">
+                        <li class="schedule-item active-item">
+                            <span class="time-badge">10:00 AM</span>
+                            <div class="item-detail">
+                                <strong>Divya Pai</strong>
+                                <small>Scientist ‘B’ – Computer Science & Engineering</small>
+                            </div>
+                            <span class="status live">🟢 Live</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="time-badge">12:30 PM</span>
+                            <div class="item-detail">
+                                <strong>Rahul Shah</strong>
+                                <small>Scientist ‘C’ – Electronics & Communication Engineering</small>
+                            </div>
+                            <span class="status upcoming">⏰ Upcoming</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="time-badge">03:00 PM</span>
+                            <div class="item-detail">
+                                <strong>Aarav Mehta</strong>
+                                <small>Scientist ‘B’ – Mathematics / Statistics / OR</small>
+                            </div>
+                            <span class="status upcoming">⏰ Scheduled</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RECENT CANDIDATES SUMMARY -->
+            <div class="section-heading">
+                <h2>Recent Candidates</h2>
+                <button onclick="showSection('candidates')" class="text-btn">View All Candidates →</button>
+            </div>
+
+            <div class="table-container glass-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>Position</th>
+                            <th>AI Match</th>
+                            <th>Interview Status</th>
+                            <th>Expert Decision</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentCandidatesTbody">
+                        <!-- Populated dynamically by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+
+        <!-- ================= 2. CANDIDATE MANAGEMENT ================= -->
+        <section id="candidates" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h1>Candidate Management</h1>
+                    <p>Filter candidates, view AI match ratings, inspect interview responses, and manage hiring decisions.</p>
+                </div>
+            </div>
+
+            <!-- SEARCH & FILTERS -->
+            <div class="filter-bar glass-card">
+                <div class="search-field">
+                    <label>Search Candidate</label>
+                    <input type="text" id="candidateSearchInput" placeholder="Name, skill, or keyword..." onkeyup="filterCandidates()">
+                </div>
+
+                <div class="filter-field">
+                    <label>Position</label>
+                    <select id="candidatePositionFilter" onchange="filterCandidates()">
+                        <option value="all">All Positions</option>
+                        <option value="Scientist ‘B’">Scientist ‘B’</option>
+                        <option value="Scientist ‘C’">Scientist ‘C’</option>
+                        <option value="Scientist ‘D’">Scientist ‘D’</option>
+                        <option value="Scientist ‘E’">Scientist ‘E’</option>
+                        <option value="Scientist ‘F’">Scientist ‘F’</option>
+                        <option value="Scientist ‘G’">Scientist ‘G’</option>
+                        <option value="Scientist ‘H’">Scientist ‘H’</option>
+                        <option value="Distinguished Scientist">Distinguished Scientist</option>
+                        <option value="Scientist ‘B’ – Computer Science & Engineering">Scientist ‘B’ – Computer Science & Engineering</option>
+                        <option value="Scientist ‘C’ – Electronics & Communication Engineering">Scientist ‘C’ – Electronics & Communication Engineering</option>
+                        <option value="Scientist ‘B’ – Mathematics / Statistics / OR">Scientist ‘B’ – Mathematics / Statistics / OR</option>
+                        <option value="Scientist ‘B’ – Psychology">Scientist ‘B’ – Psychology</option>
+                        <option value="Scientist ‘F’ – Advanced Computing & AI">Scientist ‘F’ – Advanced Computing & AI</option>
+                    </select>
+                </div>
+
+                <div class="filter-field">
+                    <label>Decision Status</label>
+                    <select id="candidateDecisionFilter" onchange="filterCandidates()">
+                        <option value="all">All Statuses</option>
+                        <option value="Pending">Pending Review</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Rejected">Rejected</option>
+                        <option value="Review Requested">Review Requested</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="results-meta">
+                <span id="candidateCountLabel">Showing 5 Candidates</span>
+            </div>
+
+            <!-- CANDIDATES LIST CONTAINER -->
+            <div class="candidates-grid" id="candidatesGrid">
+                <!-- Dynamic candidate cards rendered by JS -->
+            </div>
+
+        </section>
+
+
+        <!-- ================= 3. JOB POSITIONS ================= -->
+        <section id="positions" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h1>Job Positions</h1>
+                    <p>Manage active job vacancies, target skill requirements, and candidate pipelines.</p>
+                </div>
+                <button onclick="openPostJobModal()" class="primary-btn">➕ Post New DRDO Position</button>
+            </div>
+
+            <div class="positions-grid" id="positionsGrid">
+                <!-- Dynamic Job Positions rendered by JS -->
+            </div>
+
+        </section>
+
+
+        <!-- ================= 4. LIVE INTERVIEWS ================= -->
+        <section id="interviews" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h1>Live AI Interview Monitoring</h1>
+                    <p>Monitor candidate responses live, review real-time sentiment/technical AI analysis, and ask dynamic questions.</p>
+                </div>
+            </div>
+
+            <!-- CANDIDATE SELECTOR FOR LIVE MONITORING -->
+            <div class="live-selector-bar glass-card">
+                <label>Select Active Candidate Interview:</label>
+                <select id="liveCandidateSelect" onchange="changeLiveCandidate()">
+                    <option value="">No interviews live</option>
+                </select>
+            </div>
+
+            <!-- MAIN INTERVIEW MONITOR STUDIO -->
+            <div class="interview-studio-grid">
+
+                <!-- LEFT STAGE: VIRTUAL ROOM & QUESTION -->
+                <div class="glass-card studio-left">
+
+                    <div class="studio-top">
+                        <div class="candidate-header-info">
+                            <h2 id="liveCandidateName">No interviews live</h2>
+                            <p id="liveCandidatePos">Waiting for a live interview</p>
+                        </div>
+                        <span class="live-indicator-badge" id="liveStatusBadge">NO LIVE INTERVIEW</span>
+                    </div>
+
+                    <!-- VIRTUAL VIDEO STAGE -->
+                    <div class="virtual-stage">
+                        <div class="video-box ai-box">
+                            <div class="avatar-circle pulse">🤖</div>
+                            <span>Hirely AI Interviewer</span>
+                            <div class="audio-wave">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+
+                        <div class="video-box candidate-box">
+                            <div class="avatar-circle candidate-avatar-circle" id="liveCandidateInitials">—</div>
+                            <span id="liveCandidateLabel">No interviews live</span>
+                            <div class="mic-status">🎙️ Audio Active</div>
+                        </div>
+                    </div>
+
+                    <!-- CURRENT QUESTION DISPLAY -->
+                    <div class="current-question-card">
+                        <div class="question-header">
+                            <span class="q-tag">Question #<span id="questionNum">0</span></span>
+                            <span class="q-cat" id="questionCat">Live Monitoring</span>
+                        </div>
+                        <h3 id="currentQuestionText">"No interviews live"</h3>
+                    </div>
+
+                    <!-- LIVE CANDIDATE ANSWER FEED -->
+                    <div class="live-answer-card">
+                        <div class="answer-header">
+                            <span>💬 Live Candidate Response:</span>
+                            <small class="typing-indicator" id="typingStatus">● Transcribing speech...</small>
+                        </div>
+                        <p id="liveAnswerText">
+                            "Waiting for a live interview..."
+                        </p>
+                    </div>
+
+                    <!-- EXPERT INTERACTIVE CONTROLS -->
+                    <div class="expert-controls-bar">
+                        <button onclick="togglePauseInterview()" class="control-btn" id="pauseBtn">
+                            ⏸ Pause Interview
+                        </button>
+                        <button onclick="skipQuestion()" class="control-btn">
+                            ⏭ Skip Question
+                        </button>
+                        <button onclick="openAskQuestionModal()" class="control-btn highlight">
+                            💬 Ask Candidate
+                        </button>
+                        <button onclick="openAddNoteModal()" class="control-btn">
+                            📝 Add Note
+                        </button>
+                        <button onclick="flagResponse()" class="control-btn warning">
+                            🚩 Flag Response
+                        </button>
+                        <button onclick="endInterview()" class="control-btn danger">
+                            ⏹ End Interview
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT STAGE: REAL TIME AI METRICS & INTERVIEW LOG -->
+                <div class="glass-card studio-right">
+                    <h3>Real-Time AI Analysis</h3>
+                    <p class="sub-text">Continuous NLP sentiment & technical evaluation.</p>
+
+                    <div class="metric-bars-container">
+
+                        <div class="metric-item">
+                            <div class="metric-label">
+                                <span>Technical Relevance</span>
+                                <strong id="techScore">0%</strong>
+                            </div>
+                            <div class="progress-bg">
+                                <div class="progress-fill" id="techBar" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="metric-label">
+                                <span>Confidence Level</span>
+                                <strong id="confScore">0%</strong>
+                            </div>
+                            <div class="progress-bg">
+                                <div class="progress-fill" id="confBar" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="metric-label">
+                                <span>Communication Clarity</span>
+                                <strong id="commScore">0%</strong>
+                            </div>
+                            <div class="progress-bg">
+                                <div class="progress-fill" id="commBar" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="ai-summary-box">
+                        <strong>🤖 AI Real-Time Feedback:</strong>
+                        <p id="aiRealtimeFeedback">
+                            No interviews live.
+                        </p>
+                    </div>
+
+                    <!-- EXPERT INJECTED QUESTIONS LOG -->
+                    <div class="injected-questions-log">
+                        <h4>Expert Injected Questions & Notes</h4>
+                        <div class="log-list" id="injectedQuestionsList">
+                            <div class="log-item empty-log">No custom questions injected yet. Click "Ask Candidate" to send a question.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= 5. EVALUATIONS ================= -->
+        <section id="evaluations" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h1>Interview Evaluations</h1>
+                    <p>Combine AI evaluation scores with Expert manual ratings to generate final recruitment decisions.</p>
+                </div>
+            </div>
+
+            <!-- CANDIDATE EVALUATION SELECTION -->
+            <div class="eval-selector-bar glass-card">
+                <label>Select Candidate for Final Evaluation:</label>
+                <select id="evalCandidateSelect" onchange="loadCandidateEvaluation()">
+                    <option value="divya">Divya Pai — Scientist ‘B’ – Computer Science & Engineering (AI Score: 86%)</option>
+                    <option value="rahul">Rahul Shah — Scientist ‘C’ – Electronics & Communication Engineering (AI Score: 92%)</option>
+                    <option value="aarav">Aarav Mehta — Scientist ‘B’ – Mathematics / Statistics / OR (AI Score: 79%)</option>
+                    <option value="priya">Priya Sharma — Scientist ‘B’ – Psychology (AI Score: 94%)</option>
+                </select>
+            </div>
+
+            <div class="eval-grid">
+
+                <!-- LEFT: AI EVALUATION BREAKDOWN -->
+                <div class="glass-card eval-left">
+                    <div class="card-header">
+                        <h3>🤖 AI Automated Evaluation</h3>
+                        <span class="tag ai-tag">AI Generated</span>
+                    </div>
+
+                    <div class="score-ring-box">
+                        <div class="score-circle">
+                            <strong id="evalAiScore">86%</strong>
+                            <span>AI Score</span>
+                        </div>
+                        <div class="rec-badge" id="evalAiRec">✓ Recommended</div>
+                    </div>
+
+                    <div class="eval-metrics-list">
+                        <div class="eval-metric-row">
+                            <span>Technical Skills</span>
+                            <div class="bar-wrap">
+                                <div class="bar-fill" id="evalAiTechBar" style="width: 85%;"></div>
+                            </div>
+                            <strong id="evalAiTech">85%</strong>
+                        </div>
+
+                        <div class="eval-metric-row">
+                            <span>Communication</span>
+                            <div class="bar-wrap">
+                                <div class="bar-fill" id="evalAiCommBar" style="width: 90%;"></div>
+                            </div>
+                            <strong id="evalAiComm">90%</strong>
+                        </div>
+
+                        <div class="eval-metric-row">
+                            <span>Problem Solving</span>
+                            <div class="bar-wrap">
+                                <div class="bar-fill" id="evalAiProbBar" style="width: 82%;"></div>
+                            </div>
+                            <strong id="evalAiProb">82%</strong>
+                        </div>
+
+                        <div class="eval-metric-row">
+                            <span>Confidence</span>
+                            <div class="bar-wrap">
+                                <div class="bar-fill" id="evalAiConfBar" style="width: 88%;"></div>
+                            </div>
+                            <strong id="evalAiConf">88%</strong>
+                        </div>
+                    </div>
+
+                    <!-- CANDIDATE INTERVIEW TIMELINE -->
+                    <div class="timeline-container">
+                        <h4>Candidate Interview Timeline</h4>
+                        <div class="timeline">
+                            <div class="timeline-step completed">
+                                <div class="step-icon">✓</div>
+                                <div class="step-content">
+                                    <strong>Application Submitted</strong>
+                                    <small>Sep 22, 2026</small>
+                                </div>
+                            </div>
+                            <div class="timeline-step completed">
+                                <div class="step-icon">✓</div>
+                                <div class="step-content">
+                                    <strong>AI Screening</strong>
+                                    <small>Passed (88%)</small>
+                                </div>
+                            </div>
+                            <div class="timeline-step completed">
+                                <div class="step-icon">✓</div>
+                                <div class="step-content">
+                                    <strong>AI Interview</strong>
+                                    <small>Completed</small>
+                                </div>
+                            </div>
+                            <div class="timeline-step active">
+                                <div class="step-icon">●</div>
+                                <div class="step-content">
+                                    <strong>Expert Review</strong>
+                                    <small>In Progress</small>
+                                </div>
+                            </div>
+                            <div class="timeline-step pending">
+                                <div class="step-icon">○</div>
+                                <div class="step-content">
+                                    <strong>Final Decision</strong>
+                                    <small>Awaiting Expert</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- RIGHT: EXPERT MANUAL EVALUATION FORM -->
+                <div class="glass-card eval-right">
+                    <div class="card-header">
+                        <h3>🧑‍💼 Expert Manual Evaluation</h3>
+                        <span class="tag expert-tag">Recruiter Input</span>
+                    </div>
+
+                    <form onsubmit="submitExpertEvaluation(event)">
+
+                        <div class="form-group">
+                            <label>Technical Knowledge Rating: <strong id="sliderTechVal">85%</strong></label>
+                            <input type="range" min="0" max="100" value="85" id="sliderTech" oninput="updateSliderVal('sliderTech', 'sliderTechVal')">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Communication Score: <strong id="sliderCommVal">90%</strong></label>
+                            <input type="range" min="0" max="100" value="90" id="sliderComm" oninput="updateSliderVal('sliderComm', 'sliderCommVal')">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Problem Solving & Logic: <strong id="sliderProbVal">85%</strong></label>
+                            <input type="range" min="0" max="100" value="85" id="sliderProb" oninput="updateSliderVal('sliderProb', 'sliderProbVal')">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cultural & Team Fit: <strong id="sliderFitVal">88%</strong></label>
+                            <input type="range" min="0" max="100" value="88" id="sliderFit" oninput="updateSliderVal('sliderFit', 'sliderFitVal')">
+                        </div>
+
+                        <div class="form-group">
+                            <label>📝 Expert Notes & Feedback</label>
+                            <textarea id="evalExpertNotes" rows="4" placeholder="Write detailed evaluation notes regarding candidate strengths, code quality, and culture fit..." required>Candidate demonstrated strong depth in JavaScript fundamentals, clean variable scoping, and communicative problem-solving.</textarea>
+                        </div>
+
+                        <!-- AI + EXPERT COMBINATION STATUS -->
+                        <div class="combination-box">
+                            <div class="comb-item">
+                                <span>AI Recommendation:</span>
+                                <strong id="combAiRec">✓ Recommended (86%)</strong>
+                            </div>
+                            <div class="comb-item">
+                                <span>Current Expert Decision:</span>
+                                <strong id="combExpertStatus" class="status pending">Pending Review</strong>
+                            </div>
+                        </div>
+
+                        <!-- ACTION DECISION BUTTONS -->
+                        <div class="decision-buttons">
+                            <button type="button" onclick="setCandidateDecision('Approved')" class="decision-btn approve">
+                                ✅ Approve Candidate
+                            </button>
+                            <button type="button" onclick="setCandidateDecision('Rejected')" class="decision-btn reject">
+                                ✕ Reject Candidate
+                            </button>
+                            <button type="button" onclick="setCandidateDecision('Review Requested')" class="decision-btn review">
+                                ↻ Request Another Interview
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= 6. QUESTION BANK ================= -->
+        <section id="questions" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h1>Interview Question Bank</h1>
+                    <p>Maintain interview question categories, manage AI prompt templates, and add custom questions.</p>
+                </div>
+                <button onclick="openAddQuestionModal()" class="primary-btn">➕ Add Question</button>
+            </div>
+
+            <!-- CATEGORY FILTER TABS -->
+            <div class="category-tabs glass-card">
+                <button class="cat-tab active" onclick="filterQuestions('All')">All Categories</button>
+                <button class="cat-tab" onclick="filterQuestions('Technical')">Technical</button>
+                <button class="cat-tab" onclick="filterQuestions('Behavioral')">Behavioral</button>
+                <button class="cat-tab" onclick="filterQuestions('Situational')">Situational</button>
+                <button class="cat-tab" onclick="filterQuestions('Communication')">Communication</button>
+                <button class="cat-tab" onclick="filterQuestions('Role Specific')">Role Specific</button>
+            </div>
+
+            <div class="questions-list" id="questionsList">
+                <!-- Dynamic questions rendered by JS -->
+            </div>
+
+        </section>
+
+
+        <!-- ================= 7. SCHEDULE ================= -->
+        <section id="schedule" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h1>Interview Schedule</h1>
+                    <p>Track today's live interviews, upcoming sessions, and reschedule candidate appointments.</p>
+                </div>
+            </div>
+
+            <div class="schedule-container glass-card">
+                <h3>Today's Scheduled Interviews</h3>
+                <div class="schedule-full-list" id="scheduleFullList">
+                    <!-- Dynamic schedule items rendered by JS -->
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= 8. EXPERT PROFILE ================= -->
+        <section id="profile" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h1>Expert Profile</h1>
+                    <p>Update your interviewer details, recruitment specialization, and contact preferences.</p>
+                </div>
+            </div>
+
+            <div class="profile-card-container glass-card">
+                <div class="profile-header-view">
+                    <div class="big-avatar" id="profileBigAvatar">AS</div>
+                    <div>
+                        <h2 id="profileDisplayName">Dr. Ananya Sharma</h2>
+                        <p id="profileDisplayTitle">Senior Technical Recruiter & Engineering Evaluator</p>
+                    </div>
+                </div>
+
+                <form onsubmit="saveExpertProfile(event)" class="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expert Name</label>
+                            <input type="text" id="profName" value="Dr. Ananya Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="profEmail" value="ananya.sharma@hirely.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Specialization</label>
+                            <input type="text" id="profSpec" value="DRDO Scientist Assessment • Computer Science & AI" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Years of Experience</label>
+                            <input type="text" id="profExp" value="12 Years" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Technical Skills & Focus Areas</label>
+                        <input type="text" id="profSkills" value="AI/ML, Cyber Security, Systems Engineering, Scientist Assessment" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Organization / Company</label>
+                        <input type="text" id="profOrg" value="DRDO" required>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Save Changes</button>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MODALS ================= -->
+
+    <!-- 1. ASK QUESTION MODAL (LIVE INTERVIEW) -->
+    <div id="askQuestionModal" class="modal">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeAskQuestionModal()">×</button>
+            <span class="tag">Live Interview Control</span>
+            <h2>Ask the Candidate a Question</h2>
+            <p>Inject a real-time question into the candidate's interview session.</p>
+
+            <form onsubmit="sendExpertQuestion(event)">
+                <div class="form-group">
+                    <label>Your Question:</label>
+                    <textarea id="expertQuestionInput" rows="4" placeholder="e.g. Can you explain how you handled a difficult frontend bug in your past project?" required></textarea>
+                </div>
+                <button type="submit" class="primary-btn">Send Question to Candidate</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. ADD NOTE MODAL (LIVE INTERVIEW) -->
+    <div id="addNoteModal" class="modal">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeAddNoteModal()">×</button>
+            <span class="tag">Real-Time Notes</span>
+            <h2>Add Interview Note</h2>
+            <p>Attach a private recruiter note to this interview session.</p>
+
+            <form onsubmit="saveInterviewNote(event)">
+                <div class="form-group">
+                    <textarea id="expertNoteInput" rows="4" placeholder="Write observation note..." required></textarea>
+                </div>
+                <button type="submit" class="primary-btn">Save Note</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. ADD QUESTION MODAL (QUESTION BANK) -->
+    <div id="addQuestionModal" class="modal">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeAddQuestionModal()">×</button>
+            <span class="tag">Question Bank</span>
+            <h2>Add New Question</h2>
+
+            <form onsubmit="saveNewQuestion(event)">
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="newQCat" required>
+                        <option value="Technical">Technical</option>
+                        <option value="Behavioral">Behavioral</option>
+                        <option value="Situational">Situational</option>
+                        <option value="Communication">Communication</option>
+                        <option value="Role Specific">Role Specific</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Question Text</label>
+                    <textarea id="newQText" rows="3" placeholder="Enter interview question..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Difficulty Level</label>
+                    <select id="newQDiff">
+                        <option value="Easy">Easy</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="primary-btn">Add Question</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. RESCHEDULE MODAL -->
+    <div id="rescheduleModal" class="modal">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeRescheduleModal()">×</button>
+            <span class="tag">Schedule Management</span>
+            <h2>Reschedule Interview</h2>
+            <p id="rescheduleCandidateName">Candidate: Divya Pai</p>
+
+            <form onsubmit="saveReschedule(event)">
+                <div class="form-group">
+                    <label>New Date</label>
+                    <input type="date" id="rescheduleDate" required>
+                </div>
+                <div class="form-group">
+                    <label>New Time</label>
+                    <input type="time" id="rescheduleTime" required>
+                </div>
+                <button type="submit" class="primary-btn">Confirm Reschedule</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 5. CANDIDATE RESUME MODAL -->
+    <div id="resumeModal" class="modal">
+        <div class="modal-box resume-box">
+            <button class="close-btn" onclick="closeResumeModal()">×</button>
+            <span class="tag">Candidate Resume</span>
+            <h2 id="resumeCandidateName">Divya Pai - Resume</h2>
+            
+            <div class="resume-content-preview">
+                <div class="resume-header">
+                    <h3 id="resumeFullName">Divya Pai</h3>
+                    <p id="resumeTitle">Scientist ‘B’ – Computer Science & Engineering • Mumbai, India</p>
+                </div>
+                <hr>
+                <div class="resume-section">
+                    <h4>Experience</h4>
+                    <p><strong>Software Engineer Intern</strong> @ TechCorp (2025 - Present)</p>
+                    <ul>
+                        <li>Developed responsive web applications using React, JavaScript, and Vanilla CSS.</li>
+                        <li>Optimized DOM performance and improved page speed scores by 25%.</li>
+                    </ul>
+                </div>
+                <div class="resume-section">
+                    <h4>Skills</h4>
+                    <p class="skills-tags"><span>React</span> <span>JavaScript (ES6+)</span> <span>CSS3 / HTML5</span> <span>Git</span> <span>REST APIs</span></p>
+                </div>
+                <div class="resume-section">
+                    <h4>Education</h4>
+                    <p>B.Tech in Computer Science — Mumbai University (8.8 CGPA)</p>
+                </div>
+            </div>
+            <button onclick="closeResumeModal()" class="secondary-btn btn-full">Close Preview</button>
+        </div>
+    </div>
+
+    <!-- 6. POST JOB MODAL -->
+    <div id="postJobModal" class="modal">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closePostJobModal()">×</button>
+            <span class="tag">Job Vacancy</span>
+            <h2>Post New DRDO Position</h2>
+
+            <form onsubmit="saveNewJobPosition(event)">
+                <div class="form-group">
+                    <label>Position Title</label>
+                    <input type="text" id="jobPosTitle" placeholder="e.g. Scientist ‘B’ – Computer Science & Engineering" required>
+                </div>
+                <div class="form-group">
+                    <label>Company / Department</label>
+                    <input type="text" id="jobPosDept" placeholder="e.g. DRDO • CAIR" required>
+                </div>
+                <div class="form-group">
+                    <label>Location & Work Mode</label>
+                    <input type="text" id="jobPosLoc" placeholder="e.g. Bengaluru • On-site" required>
+                </div>
+                <div class="form-group">
+                    <label>Required Skills (comma separated)</label>
+                    <input type="text" id="jobPosSkills" placeholder="e.g. Computer Science, AI/ML, Cyber Security" required>
+                </div>
+                <button type="submit" class="primary-btn">Create Position</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="drdo-data.js"></script>
+    <script src="expert.js"></script>
+</body>
+
+</html>

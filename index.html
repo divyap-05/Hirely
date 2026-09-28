@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hirely | Recruitment Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Hirely
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#open-positions">
+                        Open Positions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <button
+                class="login-btn"
+                onclick="openLogin()">
+
+                Login
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                Recruitment made simpler
+            </span>
+
+
+            <h1>
+                Find the right
+                opportunity for you.
+            </h1>
+
+
+            <p>
+                Discover jobs that match your skills,
+                interests and preferred way of working.
+            </p>
+
+
+            <a
+                href="#open-positions"
+                class="primary-btn">
+
+                Explore Open Positions
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= LATEST JOBS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="tag">
+                Latest Opportunities
+            </span>
+
+            <h2>
+                Jobs Closing Soon
+            </h2>
+
+            <p>
+                Don't miss these recently posted opportunities.
+            </p>
+
+        </div>
+
+
+
+        <div class="job-grid">
+
+
+            <!-- JOB 1 -->
+
+            <div class="job-card">
+
+                <div class="job-top">
+
+                    <span class="job-type">
+                        Full Time
+                    </span>
+
+                    <span class="closing">
+                        Closes in 2 days
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Scientist ‘B’ – Computer Science & Engineering
+                </h3>
+
+
+                <p class="company">
+                    DRDO
+                </p>
+
+
+                <p>
+                    Build responsive and user-friendly
+                    web applications.
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>
+                        📍 Mumbai
+                    </span>
+
+                    <span>
+                        💻 On-site
+                    </span>
+
+                </div>
+
+
+                <div class="skills">
+
+                    <span>React</span>
+                    <span>JavaScript</span>
+                    <span>CSS</span>
+
+                </div>
+
+
+                <button
+                    onclick="viewJob('Scientist ‘B’ – Computer Science & Engineering')">
+
+                    View Job
+
+                </button>
+
+            </div>
+
+
+
+            <!-- JOB 2 -->
+
+            <div class="job-card">
+
+                <div class="job-top">
+
+                    <span class="job-type">
+                        Internship
+                    </span>
+
+                    <span class="closing">
+                        Closes in 3 days
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Scientist ‘B’ – Psychology
+                </h3>
+
+
+                <p class="company">
+                    DRDO
+                </p>
+
+
+                <p>
+                    Create simple and engaging
+                    digital experiences.
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>
+                        📍 Pune
+                    </span>
+
+                    <span>
+                        💻 On-site
+                    </span>
+
+                </div>
+
+
+                <div class="skills">
+
+                    <span>Figma</span>
+                    <span>UI Design</span>
+                    <span>UX</span>
+
+                </div>
+
+
+                <button
+                    onclick="viewJob('Scientist ‘B’ – Psychology')">
+
+                    View Job
+
+                </button>
+
+            </div>
+
+
+
+            <!-- JOB 3 -->
+
+            <div class="job-card">
+
+                <div class="job-top">
+
+                    <span class="job-type">
+                        Full Time
+                    </span>
+
+                    <span class="closing">
+                        Closes in 2 days
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Scientist ‘C’ – Electronics & Communication Engineering
+                </h3>
+
+
+                <p class="company">
+                    DRDO
+                </p>
+
+
+                <p>
+                    Develop reliable APIs and
+                    backend systems.
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>
+                        📍 Bengaluru
+                    </span>
+
+                    <span>
+                        💻 On-site
+                    </span>
+
+                </div>
+
+
+                <div class="skills">
+
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>SQL</span>
+
+                </div>
+
+
+                <button
+                    onclick="viewJob('Scientist ‘C’ – Electronics & Communication Engineering')">
+
+                    View Job
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="center-button">
+
+            <a
+                href="#open-positions"
+                class="secondary-btn">
+
+                View All Positions
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= OPEN POSITIONS ================= -->
+    <section id="open-positions" class="section positions-section">
+        <div class="section-heading">
+            <span class="tag">DRDO Scientist Opportunities</span>
+            <h2>Open Scientist Positions</h2>
+            <p>Explore Scientist ‘B’ entry-level opportunities and limited higher-grade positions from Scientist ‘C’ through ‘H’ and Distinguished Scientist.</p>
+        </div>
+        <div class="large-search-box">
+            <div class="search-main">
+                <label>Search positions</label>
+                <input type="text" id="jobSearch" placeholder="Grade, discipline, skill or lab" onkeyup="filterJobs()">
+            </div>
+            <div class="filter-field">
+                <label>Scientist Grade</label>
+                <select id="gradeFilter" onchange="filterJobs()">
+                    <option value="all">All Grades</option>
+                    <option value="Scientist ‘B’">Scientist ‘B’</option>
+                    <option value="Scientist ‘C’">Scientist ‘C’</option>
+                    <option value="Scientist ‘D’">Scientist ‘D’</option>
+                    <option value="Scientist ‘E’">Scientist ‘E’</option>
+                    <option value="Scientist ‘F’">Scientist ‘F’</option>
+                    <option value="Scientist ‘G’">Scientist ‘G’</option>
+                    <option value="Scientist ‘H’">Scientist ‘H’</option>
+                    <option value="Distinguished Scientist">Distinguished Scientist</option>
+                </select>
+            </div>
+            <div class="filter-field">
+                <label>Location</label>
+                <select id="locationFilter" onchange="filterJobs()"><option value="all">All DRDO Locations</option></select>
+            </div>
+            <div class="filter-field">
+                <label>Work Mode</label>
+                <select id="modeFilter" onchange="filterJobs()"><option value="all">All Modes</option><option value="On-site">On-site</option></select>
+            </div>
+        </div>
+        <div id="drdoOpenPositions" class="job-grid"></div>
+        <p id="jobCount" class="result-count">0 positions available</p>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="section about">
+
+        <div class="section-heading">
+
+            <span class="tag">
+                About Hirely
+            </span>
+
+            <h2>
+                A simpler way to connect
+                talent and opportunity.
+            </h2>
+
+            <p>
+                Hirely brings job discovery,
+                applications and interviews
+                into one platform.
+            </p>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <div>
+
+                <h3>
+                    For Candidates
+                </h3>
+
+                <p>
+                    Discover relevant opportunities,
+                    apply with your resume and
+                    manage your interview process.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    For Recruiters
+                </h3>
+
+                <p>
+                    Review applications, identify
+                    relevant candidates and manage
+                    interviews efficiently.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="section contact">
+
+        <div class="section-heading">
+
+            <span class="tag">
+                Contact Us
+            </span>
+
+            <h2>
+                Have a question?
+            </h2>
+
+            <p>
+                Get in touch with the Hirely team.
+            </p>
+
+        </div>
+
+
+        <form
+            class="contact-form"
+            onsubmit="submitContact(event)">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Email Address"
+                required>
+
+            <textarea
+                rows="5"
+                placeholder="Your Message"
+                required></textarea>
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                Send Message
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- ================= LOGIN ================= -->
+
+    <div id="loginModal" class="modal">
+
+        <div class="login-box">
+
+            <button
+                class="close-btn"
+                onclick="closeLogin()">
+
+                ×
+
+            </button>
+
+            <!-- Role Selector -->
+            <div class="role-selector">
+
+                <button
+                    type="button"
+                    id="roleCandidateBtn"
+                    class="role-btn active"
+                    onclick="selectLoginRole('candidate')">
+
+                    👤 Candidate
+
+                </button>
+
+                <button
+                    type="button"
+                    id="roleExpertBtn"
+                    class="role-btn"
+                    onclick="selectLoginRole('expert')">
+
+                    🧑‍💼DRDO Technical Expert
+
+                </button>
+
+            </div>
+
+            <span class="tag" id="loginTag">
+                Candidate Portal
+            </span>
+
+            <h2 id="loginHeading">
+                Welcome back
+            </h2>
+
+            <p id="loginSubtext">
+                Login to manage your applications
+                and interviews.
+            </p>
+
+
+            <form
+                id="loginForm"
+                onsubmit="handleRoleLogin(event)">
+
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                    required>
+
+                <input
+                    type="password"
+                    placeholder="Password"
+                    required>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="loginSubmitBtn">
+
+                    Login as Candidate
+
+                </button>
+
+            </form>
+
+
+            <p class="register-text">
+
+                New to Hirely?
+
+                <a href="#" onclick="openSignup(event)">
+    Create an account
+</a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SIGNUP MODAL ================= -->
+
+<div id="signupModal" class="modal">
+
+    <div class="login-box">
+
+        <button
+            class="close-btn"
+            onclick="closeSignup()">
+            ×
+        </button>
+
+        <span class="tag">
+            Create Account
+        </span>
+
+        <h2>
+            Join Hirely
+        </h2>
+
+        <p>
+            Create your account to discover opportunities.
+        </p>
+
+        <span class="tag" style="margin-top: 10px;">Choose how you will use Hirely</span>
+
+        <div class="role-selector" style="margin: 14px 0 18px;">
+            <button type="button" id="signupCandidateBtn" class="role-btn active" onclick="selectSignupRole('candidate')">
+                👤 Candidate
+            </button>
+            <button type="button" id="signupExpertBtn" class="role-btn" onclick="selectSignupRole('expert')">
+                🧑‍💼 DRDO Technical Expert
+            </button>
+        </div>
+
+        <p id="signupRoleHint" class="register-text">
+            You will use Hirely to apply for DRDO-oriented positions and track your applications.
+        </p>
+
+        <form onsubmit="createAccount(event)">
+
+            <input
+                type="text"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="password"
+                placeholder="Create Password"
+                required>
+
+            <input
+                type="password"
+                placeholder="Confirm Password"
+                required>
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+        <p class="register-text">
+
+            Already have an account?
+
+            <a
+                href="#"
+                onclick="switchToLogin(event)">
+
+                Login
+
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="logo">
+            Hirely
+        </div>
+
+        <p>
+            Recruitment made simpler.
+        </p>
+
+        <p>
+            ©️ 2026 Hirely
+        </p>
+
+    </footer>
+
+
+    <script src="drdo-data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Hirely | Candidate Portal
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="candidate.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Hirely
+        </div>
+
+
+        <nav>
+
+            <button
+                onclick="showSection('dashboard')"
+                class="nav-item active">
+
+                🏠 Dashboard
+
+            </button>
+
+
+            <button
+                onclick="showSection('jobs')"
+                class="nav-item">
+
+                💼 Find Jobs
+
+            </button>
+
+
+            <button
+                onclick="showSection('applications')"
+                class="nav-item">
+
+                📋 My Applications
+
+            </button>
+
+
+            <button
+                onclick="showSection('interviews')"
+                class="nav-item">
+
+                🎤 Interviews
+
+            </button>
+
+
+            <button
+                onclick="showSection('profile')"
+                class="nav-item">
+
+                👤 My Profile
+
+            </button>
+
+        </nav>
+
+
+        <button
+            class="logout"
+            onclick="logout()">
+
+            Logout
+
+        </button>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2 id="pageTitle">
+                    Dashboard
+                </h2>
+
+                <p>
+                    Welcome back, Divya 👋
+                </p>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                🔔
+
+                <div class="avatar">
+                    D
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section
+            id="dashboard"
+            class="page active-page">
+
+
+            <div class="welcome-card">
+
+                <div>
+
+                    <span class="small-label">
+                        CANDIDATE PORTAL
+                    </span>
+
+                    <h1>
+                        Find your next opportunity.
+                    </h1>
+
+                    <p>
+                        Track applications, prepare for interviews,
+                        and discover jobs that match your skills.
+                    </p>
+
+                    <button
+                        onclick="showSection('jobs')"
+                        class="primary-btn">
+
+                        Explore Jobs
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <span>
+                        Applications
+                    </span>
+
+                    <strong>
+                        4
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Shortlisted
+                    </span>
+
+                    <strong>
+                        2
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Interviews
+                    </span>
+
+                    <strong>
+                        1
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Profile
+                    </span>
+
+                    <strong>
+                        85%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- UPCOMING INTERVIEW -->
+
+            <div class="section-heading">
+
+                <h2>
+                    Upcoming Interview
+                </h2>
+
+            </div>
+
+
+            <div class="interview-card">
+
+                <div>
+
+                    <span class="status upcoming">
+                        Scheduled
+                    </span>
+
+                    <h3>
+                        Scientist ‘B’ – Computer Science & Engineering
+                    </h3>
+
+                    <p>
+                        DRDO
+                    </p>
+
+                    <p>
+                        📅 September 28, 2026
+                        &nbsp; | &nbsp;
+                        🕐 11:00 AM
+                    </p>
+
+                </div>
+
+
+                <button
+                    onclick="openInterview()"
+                    class="primary-btn">
+
+                    Enter Interview
+
+                </button>
+
+            </div>
+
+
+
+            <!-- RECOMMENDED JOBS -->
+
+            <div class="section-heading">
+
+                <h2>
+                    Recommended For You
+                </h2>
+
+                <button
+                    onclick="showSection('jobs')"
+                    class="text-btn">
+
+                    View All
+
+                </button>
+
+            </div>
+
+
+            <div class="job-grid">
+
+                <div class="job-card">
+                    <span class="tag">DRDO • Scientist ‘B’</span>
+                    <h3>Scientist ‘B’ – Computer Science & Engineering</h3>
+                    <p>Defence Research & Development Organisation</p>
+                    <div class="job-info">Bengaluru · On-site</div>
+                    <p class="skills">Computer Science · AI/ML · Cyber Security</p>
+                    <button onclick="applyJob('Scientist ‘B’ – Computer Science & Engineering')" class="secondary-btn">View & Apply</button>
+                </div>
+
+                <div class="job-card">
+                    <span class="tag">DRDO • Scientist ‘B’</span>
+                    <h3>Scientist ‘B’ – Electronics & Communication Engineering</h3>
+                    <p>Defence Research & Development Organisation</p>
+                    <div class="job-info">Dehradun · On-site</div>
+                    <p class="skills">Electronics · Communication · Radar</p>
+                    <button onclick="applyJob('Scientist ‘B’ – Electronics & Communication Engineering')" class="secondary-btn">View & Apply</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= JOBS ================= -->
+
+        <section
+            id="jobs"
+            class="page">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h1>
+                        Find Jobs
+                    </h1>
+
+                    <p>
+                        Discover opportunities that match your skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="job-search">
+                <input type="text" id="candidateSearch" placeholder="Search scientist position, discipline or skill..." onkeyup="searchCandidateJobs()">
+                <select id="candidateGrade" onchange="searchCandidateJobs()">
+                    <option value="all">All Scientist Grades</option>
+                    <option value="Scientist ‘B’">Scientist ‘B’</option>
+                    <option value="Scientist ‘C’">Scientist ‘C’</option>
+                    <option value="Scientist ‘D’">Scientist ‘D’</option>
+                    <option value="Scientist ‘E’">Scientist ‘E’</option>
+                    <option value="Scientist ‘F’">Scientist ‘F’</option>
+                    <option value="Scientist ‘G’">Scientist ‘G’</option>
+                    <option value="Scientist ‘H’">Scientist ‘H’</option>
+                    <option value="Distinguished Scientist">Distinguished Scientist</option>
+                </select>
+                <select id="candidateLocation" onchange="searchCandidateJobs()">
+                    <option value="all">All DRDO Locations</option>
+                </select>
+                <select id="candidateMode" onchange="searchCandidateJobs()">
+                    <option value="all">All Work Modes</option>
+                    <option value="On-site">On-site</option>
+                </select>
+            </div>
+            <p id="candidateJobCount" class="result-count">0 positions available</p>
+            <div class="job-list" id="candidateJobsList"></div>
+
+        </section>
+
+        <!-- ================= RESUME SCREENING ================= -->
+
+        <section id="resumeScreening" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h1>Resume Screening</h1>
+                    <p>Upload your resume to check it against this position before applying.</p>
+                </div>
+            </div>
+
+            <div class="screening-panel">
+                <div class="screening-job-card">
+                    <span class="tag">APPLICATION FOR</span>
+                    <h2 id="screeningJobTitle">Selected Position</h2>
+                    <p id="screeningJobDetails">Job details will appear here.</p>
+                </div>
+
+                <div class="screening-upload-card">
+                    <h2>Upload Resume</h2>
+                    <p>Your resume is scanned locally and is used only for this application.</p>
+                    <label class="screening-file-picker" for="applicationResumeInput">
+                        <span>📄</span>
+                        <strong id="screeningFileName">No resume selected</strong>
+                        <small>PDF only</small>
+                    </label>
+                    <input id="applicationResumeInput" type="file" accept="application/pdf,.pdf" onchange="updateScreeningFileName()" hidden>
+                    <div class="screening-actions">
+                        <button type="button" class="secondary-btn" onclick="showSection('jobs')">Back to Jobs</button>
+                        <button type="button" id="screenResumeButton" class="primary-btn" onclick="screenApplicationResume()">Scan Resume</button>
+                    </div>
+                    <p id="screeningStatus" class="screening-status">Upload a PDF resume to continue.</p>
+                </div>
+
+                <div id="screeningResult" class="screening-result"></div>
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= APPLICATIONS ================= -->
+
+        <section
+            id="applications"
+            class="page">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h1>
+                        My Applications
+                    </h1>
+
+                    <p>
+                        Track the progress of your applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="application-table">
+
+                <div class="table-header">
+                    <span>Position</span>
+                    <span>Company</span>
+                    <span>Applied On</span>
+                    <span>Status</span>
+                </div>
+
+                <div id="applicationRows"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= INTERVIEWS ================= -->
+
+        <section
+            id="interviews"
+            class="page">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h1>
+                        Interviews
+                    </h1>
+
+                    <p>
+                        Your scheduled and completed interviews.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="interview-list">
+
+                <div class="interview-card large">
+
+                    <div>
+
+                        <span class="status upcoming">
+                            Upcoming
+                        </span>
+
+                        <h2>
+                            Scientist ‘B’ – Computer Science & Engineering
+                        </h2>
+
+                        <p>
+                            DRDO
+                        </p>
+
+                        <div class="interview-details">
+
+                            📅 September 28, 2026
+
+                            <br>
+
+                            🕐 11:00 AM
+
+                            <br>
+
+                            🤖 AI Interview
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        onclick="openInterview()"
+                        class="primary-btn">
+
+                        Enter Interview
+
+                    </button>
+
+                </div>
+
+
+                <div class="interview-card large">
+
+                    <div>
+
+                        <span class="status completed">
+                            Completed
+                        </span>
+
+                        <h2>
+                            Scientist ‘C’ – Electronics & Communication Engineering
+                        </h2>
+
+                        <p>
+                            DRDO
+                        </p>
+
+                        <div class="interview-details">
+
+                            📅 September 24, 2026
+
+                            <br>
+
+                            🤖 AI Interview
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        onclick="viewInterviewResult()"
+                        class="secondary-btn">
+
+                        View Result
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PROFILE ================= -->
+
+        <section
+            id="profile"
+            class="page">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+                    <p>
+                        Keep your information updated for better job matches.
+                    </p>
+
+                </div>
+
+
+                <button
+                    onclick="saveProfile()"
+                    class="primary-btn">
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="profile-avatar" id="profileAvatar">
+                    D
+                </div>
+
+
+                <div class="profile-form">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        id="profileName"
+                        type="text"
+                        value="Divya Pai">
+
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        id="profileEmail"
+                        type="email"
+                        value="candidate@example.com">
+
+
+                    <label>
+                        Phone
+                    </label>
+
+                    <input
+                        id="profilePhone"
+                        type="text"
+                        value="+91 XXXXX XXXXX">
+
+
+                    <label>
+                        Skills
+                    </label>
+
+                    <input
+                        id="profileSkills"
+                        type="text"
+                        value="HTML, CSS, JavaScript, React">
+
+                    <label>
+                        Projects & Practical Experience
+                    </label>
+
+                    <textarea
+                        id="profileProjects"
+                        rows="2"
+                        placeholder="e.g. Built a To-Do List application using HTML, CSS and JavaScript with localStorage persistence.">Built a To-Do List application using HTML, CSS and JavaScript with localStorage persistence.</textarea>
+
+
+
+                    <label>
+                        Resume
+                    </label>
+
+                    <div class="resume-box">
+
+                        📄 <span id="resumeFileName">Divya_Pai_Resume.pdf</span>
+
+                        <button type="button" onclick="replaceResume()">
+                            Replace
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= INTERVIEW MODAL ================= -->
+
+    <div
+        id="interviewModal"
+        class="modal">
+
+        <div class="interview-room">
+
+            <button
+                class="close-btn"
+                onclick="closeInterview()"
+                title="Close Interview">
+                ×
+            </button>
+
+            <div class="interview-top-bar">
+                <div>
+                    <span class="small-label">
+                        AI INTERVIEW STUDIO • DRDO RAC
+                    </span>
+                    <h1 id="interviewPositionHeading">
+                        Scientist ‘B’ Interview
+                    </h1>
+                    <p class="interview-company" id="interviewLabSubtext">
+                        DRDO • Defence Research & Development Organisation
+                    </p>
+                </div>
+                <button
+                    type="button"
+                    class="interview-settings-btn"
+                    onclick="openInterviewSettings()"
+                    title="Interview Configuration">
+                    ⚙️ AI Settings
+                </button>
+            </div>
+
+            <div class="ai-status-row">
+                <span id="aiModelBadge" class="ai-badge">🤖 Adaptive AI Interviewer</span>
+                <span id="aiStageBadge" class="ai-stage-badge">Stage: Opening &amp; Background</span>
+            </div>
+
+            <div class="question-box">
+                <div class="question-meta">
+                    <span id="questionNumLabel">
+                        Question 1 of 5
+                    </span>
+                    <span id="questionCategoryTag" class="cat-pill">
+                        Ice-breaking
+                    </span>
+                </div>
+
+                <h2 id="questionText">
+                    Welcome to your DRDO interview. Tell us about yourself and the projects you have built.
+                </h2>
+
+                <div class="question-audio-bar">
+                    <button
+                        type="button"
+                        class="audio-btn"
+                        id="speakQuestionBtn"
+                        onclick="toggleSpeakQuestion()">
+                        🔊 Listen to Question
+                    </button>
+                    <label class="auto-speak-label">
+                        <input type="checkbox" id="autoSpeakCheckbox" checked onchange="saveAutoSpeakPref()">
+                        Auto-read AI questions aloud
+                    </label>
+                </div>
+            </div>
+
+            <div class="answer-area">
+                <div id="voiceStatusIndicator" class="voice-indicator" style="display:none;">
+                    🔴 <strong>Recording live:</strong> Speak naturally into your microphone. Words are transcribed in real-time.
+                </div>
+
+                <textarea
+                    id="answer"
+                    placeholder="Type your answer here, or click 'Answer by Voice' to speak..."></textarea>
+
+                <div class="answer-actions">
+                    <button
+                        type="button"
+                        onclick="toggleVoiceInput()"
+                        class="voice-btn"
+                        id="voiceToggleBtn">
+                        🎤 Answer by Voice
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="submitAnswer()"
+                        class="primary-btn"
+                        id="submitAnswerBtn">
+                        Submit Answer →
+                    </button>
+                </div>
+
+                <div id="aiThinkingIndicator" class="ai-thinking" style="display:none;">
+                    <div class="spinner-dot"></div>
+                    <span id="aiThinkingText">AI is evaluating your response and generating an adaptive follow-up question...</span>
+                </div>
+            </div>
+
+            <!-- Expandable interview conversation history -->
+            <div class="interview-dialogue-drawer" id="interviewDialogueDrawer">
+                <div class="dialogue-drawer-header" onclick="toggleDialogueDrawer()">
+                    <span>💬 Interview Dialogue History (<span id="answeredCountBadge">0</span> answered)</span>
+                    <span id="dialogueToggleIcon">▼</span>
+                </div>
+                <div id="dialogueList" class="dialogue-list" style="display:none;"></div>
+            </div>
+
+            <div class="interview-progress">
+                <span id="progressTextLabel">
+                    Question 1 of 5
+                </span>
+
+                <div class="progress">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= INTERVIEW SETTINGS MODAL ================= -->
+    <div id="interviewSettingsModal" class="modal">
+        <div class="settings-modal-card">
+            <button class="close-btn" onclick="closeInterviewSettings()">×</button>
+            <h2 style="color: #243b6b; margin-bottom: 6px;">⚙️ AI Interview Settings</h2>
+            <p style="font-size: 13px; color: #64748b; margin-bottom: 20px;">
+                Configure the AI interviewer engine and question count for your demo.
+            </p>
+
+            <div class="settings-group">
+                <label for="settingsQuestionCount">Interview Length (Total Questions)</label>
+                <select id="settingsQuestionCount">
+                    <option value="3">3 Questions — Quick Demo (Opening, Project Deep Dive, Defence & Leadership)</option>
+                    <option value="5" selected>5 Questions — Standard (Opening, Project, Technical Drill, Defence, Management)</option>
+                    <option value="7">7 Questions — In-Depth Scientific Panel Evaluation</option>
+                </select>
+                <p class="settings-hint">The AI dynamically adapts every follow-up question based on your answers.</p>
+            </div>
+
+            <div class="settings-group">
+                <label for="settingsAiEngine">AI Generation Engine</label>
+                <select id="settingsAiEngine" onchange="toggleApiKeyField()">
+                    <option value="adaptive">Smart Adaptive AI Engine (Local / Instant / Offline Ready)</option>
+                    <option value="gemini">Google Gemini LLM (Requires API Key)</option>
+                </select>
+                <p class="settings-hint">The Smart Adaptive Engine works offline with zero latency, perfect for hackathon stages.</p>
+            </div>
+
+            <div class="settings-group" id="geminiApiKeyGroup" style="display:none;">
+                <label for="settingsGeminiApiKey">Gemini API Key</label>
+                <input type="password" id="settingsGeminiApiKey" placeholder="AIzaSy...">
+                <p class="settings-hint">Stored securely in your browser's localStorage for this session.</p>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px;">
+                <button type="button" class="secondary-btn" onclick="closeInterviewSettings()">Cancel</button>
+                <button type="button" class="primary-btn" onclick="saveInterviewSettings()">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="drdo-data.js"></script>
+    <script src="candidate.js"></script>
+
+</body>
+
+</html>
