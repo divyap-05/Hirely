@@ -64,11 +64,11 @@ The platform is designed to support both sides of the recruitment process: **can
 | Layer | Technologies |
 |---|---|
 | **Frontend** | HTML, CSS, JavaScript |
-| **Backend** | Node.js, Express.js |
-| **Database** | MySQL |
-| **AI / Processing** | NLP, Resume Parsing, AI-Assisted Screening |
+| **Backend** | Python,FastAPI|
+| **Data Storage** |Browser Local Storage |
+| **AI / Processing** | NLP, Resume Parsing with PyMuPDF, AI-Assisted Screening,Speech Recognition with PocketSphinx |
 | **Communication** | REST APIs, WebSockets |
-| **Browser APIs** | Web Speech API, MediaRecorder API |
+| **Browser APIs** | Storage Event API,Web Storage API,Web Speech API, MediaRecorder API |
 | **Version Control** | Git, GitHub |
 
 ---
