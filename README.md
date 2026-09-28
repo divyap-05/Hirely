@@ -1,139 +1,155 @@
-# Hirely 🚀
+# 🚀 Hirely
 
-### AI-Assisted Recruitment & Adaptive Technical Interview Platform
+### AI-Assisted Recruitment & Adaptive Interview Platform
 
-Hirely is an AI-assisted recruitment and technical interview platform designed to streamline candidate screening, job matching, adaptive technical interviews, and expert evaluation.
+Hirely is an end-to-end recruitment platform that connects **job discovery, applications, resume screening, adaptive interviews, and expert evaluation** in a unified workflow.
 
-The platform combines a browser-based recruitment interface with a local Python backend for resume processing, ATS-style scoring, job matching, answer evaluation, speech-to-text fallback, and adaptive interview question generation.
-
-It supports two interview-generation modes:
-
-1. A custom local adaptive NLP/rule-based engine that works without an external AI API.
-2. Optional Google Gemini 2.0 Flash integration for LLM-based adaptive question generation.
+The platform is designed to support both sides of the recruitment process: **candidates looking for opportunities** and **experts managing and evaluating candidates**.
 
 ---
 
 ## ✨ Key Features
 
-### 👤 Candidate Portal
+### Candidate
 
-- Candidate profile management
-- Browse available technical positions
-- View job requirements
-- Upload PDF resume
-- Resume screening and ATS-style score
-- Job-description matching
-- Application tracking
-- Interview scheduling
-- Adaptive technical interview
-- Text-based answers
-- Voice-based answers
-- Question text-to-speech
-- Interview history
-- AI-assisted interview evaluation
+- Browse and search open positions
+- View detailed job descriptions
+- Apply for job opportunities
+- Upload resumes
+- AI-assisted resume screening
+- Job-resume matching
+- Track application status
+- View scheduled interviews
+- Participate in online interviews
+- Answer interview questions through text or voice
 
----
+### Expert / Recruiter
 
-### 📄 Resume Screening
+- Manage open positions
+- Review candidate applications
+- View candidate profiles and resumes
+- Access AI-assisted screening results
+- Shortlist relevant candidates
+- Review and modify interview questions
+- Schedule interviews
+- Participate in live interviews
+- Evaluate candidate responses
+- Make recruitment decisions
 
-Candidates can upload a PDF resume for automated analysis.
+### AI-Assisted Capabilities
 
-The backend:
-
-1. Extracts text from the PDF.
-2. Detects contact information.
-3. Identifies common resume sections.
-4. Searches for predefined technical keywords.
-5. Evaluates content quality indicators.
-6. Checks basic ATS-oriented formatting characteristics.
-7. Matches resume keywords against the selected job description.
-8. Produces an overall screening score and recommendations.
-
-The screening score is calculated locally and does not require a third-party ATS service.
-
-### Screening Components
-
-| Component | Weight |
-|---|---:|
-| Contact Information | 10 |
-| Resume Sections | 20 |
-| Keyword Match | 30 |
-| Content Quality | 20 |
-| ATS Formatting | 20 |
-| **Total** | **100** |
-
-The prototype uses:
-
-- **ATS score threshold:** 70/100
-- **Job match threshold:** 50%
-
-These thresholds are configurable in the application logic.
+- Resume parsing and text extraction
+- Job-resume matching
+- Candidate screening
+- Adaptive interview question generation
+- Interview response analysis
+- AI-assisted candidate evaluation
 
 ---
 
-# 🧠 Adaptive Interview Engine
+## 🔄 Recruitment Workflow
 
-Hirely does not rely only on a fixed question bank.
+### Candidate Journey
 
-The local adaptive engine analyzes:
+**Find Jobs → View Position → Apply → Resume Screening → Track Application → Interview → Evaluation**
 
-- Candidate profile
-- Claimed skills
-- Projects
-- Technologies mentioned
-- Previous answers
-- Previous evaluation scores
-- Interview stage
-- Candidate domain
-- Response length
-- Technical keywords in the answer
+### Expert Journey
 
-It then selects an appropriate follow-up question.
+**Create Position → Review Applications → AI-Assisted Screening → Shortlist → Schedule Interview → Evaluate Candidate → Final Decision**
 
 ---
 
-## 🔍 Local NLP / Adaptive Engine
+## 🛠️ Technology Stack
 
-The local engine is a custom deterministic NLP-style system implemented in Python.
+| Layer | Technologies |
+|---|---|
+| **Frontend** | HTML, CSS, JavaScript |
+| **Backend** | Node.js, Express.js |
+| **Database** | MySQL |
+| **AI / Processing** | NLP, Resume Parsing, AI-Assisted Screening |
+| **Communication** | REST APIs, WebSockets |
+| **Browser APIs** | Web Speech API, MediaRecorder API |
+| **Version Control** | Git, GitHub |
 
-It uses:
+---
 
-- Regular expressions
-- Keyword extraction
-- Entity extraction
-- Technical-domain dictionaries
-- Project detection
-- Technology detection
-- Domain classification
-- Interview-history analysis
-- Answer-score analysis
-- Rule-based adaptive question pathways
+## 📸 Project Screenshots
 
-### Technical entity extraction
+### 🏠 Home
 
-The engine detects technologies from predefined technical vocabulary covering domains such as:
+**The Hirely homepage where candidates can browse available open positions and explore job opportunities.**
 
-- Web Development
-- Backend Development
-- AI/ML
-- Data
-- Embedded Systems
-- Defence/Electronics
+![Home 1](screenshots/home1.png)
 
-For example, it can identify terms such as:
+![Home 2](screenshots/home2.png)
 
-```text
-Python
-JavaScript
-React
-FastAPI
-SQL
-MongoDB
-Machine Learning
-NLP
-YOLO
-PyTorch
-FPGA
-Verilog
-Radar
-UAV
+![Home 3](screenshots/home3.png)
+
+---
+
+### 👨‍💻 Candidate Portal
+
+**The candidate portal where candidates can find jobs, view job details, apply for positions, complete resume screening, track applications, and proceed through the interview process.**
+
+![Candidate 1](screenshots/candidate1.png)
+
+![Candidate 2](screenshots/candidate2.png)
+
+![Candidate 3](screenshots/candidate3.png)
+
+![Candidate 4](screenshots/candidate4.png)
+
+---
+
+### 👩‍💼 Expert Portal
+
+**The expert portal where recruiters can review applications, evaluate AI-screened candidates, shortlist candidates, conduct interviews, and make recruitment decisions.**
+
+![Expert 1](screenshots/expert1.png)
+
+![Expert 2](screenshots/expert2.png)
+
+![Expert 3](screenshots/expert3.png)
+
+![Expert 4](screenshots/expert4.png)
+
+---
+
+## 🧩 System Overview
+
+Hirely is organized around three connected layers:
+
+### 1. Candidate Portal
+
+Provides candidates with a complete recruitment journey, from discovering job opportunities to applying, completing resume screening, tracking applications, and participating in interviews.
+
+### 2. AI-Assisted Recruitment Layer
+
+Processes resumes and job requirements to support candidate screening, job-resume matching, adaptive interview question generation, and interview evaluation.
+
+### 3. Expert Portal
+
+Provides recruiters with tools to manage positions, review applications, evaluate candidates, shortlist applicants, schedule interviews, and participate in the final evaluation process.
+
+---
+
+## 🎯 Project Objective
+
+Hirely aims to simplify and connect the major stages of recruitment through a single platform while using AI-assisted features to support **candidate screening and adaptive interviewing**.
+
+The platform focuses on creating a structured workflow for both candidates and recruitment experts.
+
+---
+
+## 🌱 Future Scope
+
+- Semantic-based resume and job matching
+- Advanced recruitment analytics
+- Automated candidate notifications
+- Enhanced speech-based interviews
+- Cloud deployment
+- Advanced candidate insights
+- Expanded authentication and security
+
+---
+
