@@ -137,8 +137,8 @@ The platform focuses on creating a structured workflow for both candidates and r
 
 ## 🌱 Future Scope
 
--Using database like PostgreSQL
-- Including Gemini API for AI integration 
+- Migration to a database such as PostgreSQL
+- Integration of Gemini API for advanced AI capabilities
 - Semantic-based resume and job matching
 - Advanced recruitment analytics
 - Automated candidate notifications
@@ -146,7 +146,3 @@ The platform focuses on creating a structured workflow for both candidates and r
 - Cloud deployment
 - Advanced candidate insights
 - Expanded authentication and security
-  
-
----
-
