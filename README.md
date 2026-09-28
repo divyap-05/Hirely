@@ -13,12 +13,11 @@ The platform is designed to support both sides of the recruitment process: **can
 ### Candidate
 
 - Browse and search open positions
-- View detailed job descriptions
 - Apply for job opportunities
 - Upload resumes
 - AI-assisted resume screening
 - Job-resume matching
-- Track application status
+- View Application Status
 - View scheduled interviews
 - Participate in online interviews
 - Answer interview questions through text or voice
@@ -27,11 +26,7 @@ The platform is designed to support both sides of the recruitment process: **can
 
 - Manage open positions
 - Review candidate applications
-- View candidate profiles and resumes
-- Access AI-assisted screening results
-- Shortlist relevant candidates
 - Review and modify interview questions
-- Schedule interviews
 - Participate in live interviews
 - Evaluate candidate responses
 - Make recruitment decisions
@@ -67,7 +62,6 @@ The platform is designed to support both sides of the recruitment process: **can
 | **Backend** | Python,FastAPI|
 | **Data Storage** |Browser Local Storage |
 | **AI / Processing** | NLP, Resume Parsing with PyMuPDF, AI-Assisted Screening,Speech Recognition with PocketSphinx |
-| **Communication** | REST APIs, WebSockets |
 | **Browser APIs** | Storage Event API,Web Storage API,Web Speech API, MediaRecorder API |
 | **Version Control** | Git, GitHub |
 
@@ -143,6 +137,8 @@ The platform focuses on creating a structured workflow for both candidates and r
 
 ## 🌱 Future Scope
 
+-Using database like PostgreSQL
+- Including Gemini API for AI integration 
 - Semantic-based resume and job matching
 - Advanced recruitment analytics
 - Automated candidate notifications
@@ -150,6 +146,7 @@ The platform focuses on creating a structured workflow for both candidates and r
 - Cloud deployment
 - Advanced candidate insights
 - Expanded authentication and security
+  
 
 ---
 
