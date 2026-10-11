@@ -1,4 +1,4 @@
-# 🚀 Hirely
+#  Hirely
 
 ### AI-Assisted Recruitment & Adaptive Interview Platform
 
@@ -8,7 +8,7 @@ The platform is designed to support both sides of the recruitment process: **can
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 ### Candidate
 
@@ -42,7 +42,7 @@ The platform is designed to support both sides of the recruitment process: **can
 
 ---
 
-## 🔄 Recruitment Workflow
+##  Recruitment Workflow
 
 ### Candidate Journey
 
@@ -54,7 +54,7 @@ The platform is designed to support both sides of the recruitment process: **can
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Layer | Technologies |
 |---|---|
@@ -67,9 +67,9 @@ The platform is designed to support both sides of the recruitment process: **can
 
 ---
 
-## 📸 Project Screenshots
+##  Project Screenshots
 
-### 🏠 Home
+###  Home
 
 **The Hirely homepage where candidates can browse available open positions and explore job opportunities.**
 
@@ -81,7 +81,7 @@ The platform is designed to support both sides of the recruitment process: **can
 
 ---
 
-### 👨‍💻 Candidate Portal
+###  Candidate Portal
 
 **The candidate portal where candidates can find jobs, view job details, apply for positions, complete resume screening, track applications, and proceed through the interview process.**
 
@@ -95,7 +95,7 @@ The platform is designed to support both sides of the recruitment process: **can
 
 ---
 
-### 👩‍💼 Expert Portal
+###  Expert Portal
 
 **The expert portal where recruiters can review applications, evaluate AI-screened candidates, shortlist candidates, conduct interviews, and make recruitment decisions.**
 
@@ -109,7 +109,7 @@ The platform is designed to support both sides of the recruitment process: **can
 
 ---
 
-## 🧩 System Overview
+##  System Overview
 
 Hirely is organized around three connected layers:
 
@@ -127,7 +127,7 @@ Provides recruiters with tools to manage positions, review applications, evaluat
 
 ---
 
-## 🎯 Project Objective
+##  Project Objective
 
 Hirely aims to simplify and connect the major stages of recruitment through a single platform while using AI-assisted features to support **candidate screening and adaptive interviewing**.
 
@@ -135,7 +135,7 @@ The platform focuses on creating a structured workflow for both candidates and r
 
 ---
 
-## 🌱 Future Scope
+##  Future Scope
 
 - Migration to a database such as PostgreSQL
 - Integration of Gemini API for advanced AI capabilities
