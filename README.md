@@ -147,6 +147,6 @@ The platform focuses on creating a structured workflow for both candidates and r
 - Advanced candidate insights
 - Expanded authentication and security
 
-# About the project 
+## About the project 
 
-It was a group project.This repository is maintained by me.
+It was a group project .This repository is maintained by me.
