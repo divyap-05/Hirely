@@ -7,6 +7,30 @@ Hirely is an end-to-end recruitment platform that connects **job discovery, appl
 The platform is designed to support both sides of the recruitment process: **candidates looking for opportunities** and **experts managing and evaluating candidates**.
 
 ---
+## Acknowledgement 
+
+It was a group project for hackathon.This repository is maintained by me.
+
+## My Contributions
+
+Hirely was developed collaboratively as a hackathon project. My primary contributions focused on the main user interface, candidate and recruiter workflows, and the AI-powered interview experience.
+
+- **Main UI Development**: Worked on building the main user interface, focusing on the layout, visual presentation, navigation, and interactive user experience.
+  
+- **Candidate Portal**: Contributed to the candidate-facing interface and workflows, enabling candidates to interact with the platform and access its recruitment and interview features.
+  
+- **Recruiter Portal**: Worked on the recruiter-facing interface and workflows, supporting recruiter interactions with the platform.
+  
+- **AI-Powered Interview System:** Worked on the core AI interview functionality, including the interview interaction flow and sound-enabled features to make the interview experience more interactive.
+  
+- **Voice-Based Interaction:** Contributed to sound-related interview functionality using browser APIs, including the Web Speech API and MediaRecorder API.
+  
+- **Frontend Integration:** Worked with HTML, CSS, and JavaScript to connect interface components with application functionality and maintain a consistent experience across candidate and recruiter views.
+  
+- **Collaborative Development:** Collaborated with teammates to integrate and refine the platform's features during the hackathon.
+
+Team contribution: ATS functionality was primarily handled by another team member, while my focus was on the UI, candidate and recruiter experiences, and the AI interview system.
+
 
 ##  Key Features
 
@@ -147,6 +171,3 @@ The platform focuses on creating a structured workflow for both candidates and r
 - Advanced candidate insights
 - Expanded authentication and security
 
-## About the project 
-
-It was a group project .This repository is maintained by me.
